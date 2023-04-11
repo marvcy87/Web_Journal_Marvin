@@ -1,0 +1,555 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+body{
+  background: rgba(0, 0, 0, 0.05);
+}
+/* Home Page*/
+.author{
+  width: 20vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #6176E3;
+ background: -moz-linear-gradient(top,#DA38CD 0%, #6176E3 100%);
+  background: -webkit-linear-gradient(top,#DA38CD 0%, #6176E3 100%);
+  color: #FFFFFF;
+  visibility: hidden;
+  animation: fadeinUp 1.8s forwards linear 0.5s ; 
+}
+
+#Me{
+  visibility: hidden;
+}
+
+.author img{
+  width: 75%;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+}
+.author h3{
+margin-top: 10px;
+}
+
+.author ul{
+  margin-top: 10px;
+}
+.author ul li{
+  text-decoration: none;
+  list-style: none;
+}
+
+header{
+  position: absolute;
+  top: 0;
+left: 20vw;
+width: 79.5vw;
+height: 100vh ;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+padding: 20px;
+visibility: hidden;
+animation: fadeinSide 1.8s forwards linear 1s;
+}
+
+header img{
+ width: 100%;
+}
+
+header .textarea h1{
+  background: linear-gradient(145deg, #DA38CD, #6176E3);
+-webkit-background-clip: text;
+-moz-background-clip: text;
+  color: transparent;
+  font-size: 70px;
+  font-weight: bold;
+  
+}
+header .textarea p{
+  font-size: 15px;
+  color: #6176E3;
+  margin-bottom: 50px;
+  text-align: justify;
+  padding: 10px;
+}
+header .textarea button{
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 30px;
+  color: #6176E3;
+  border: 2px solid #6176E3;
+  transition: transform 0.3s;
+}
+header .textarea button:hover{
+  transform: translateY(-3px);
+  background: #6176E3;
+ /* background: -moz-linear-gradient(top,#ABCEFF 0%, #C6ABFF 100%);
+  background: -webkit-linear-gradient(top,#ABCEFF 0%, #C6ABFF 100%); */
+  color: #FFFFFF;
+  cursor: pointer;
+  box-shadow: 2px 3px 10px 2px rgba(40,40,40,0.5);
+}
+header .textarea button a{
+  text-decoration: none;
+  color: #6176E3;
+  padding: 15px;
+}
+header .textarea button a:hover{
+  color: #FFFFFF;
+ 
+}
+
+
+header .imagearea, header .textarea{
+  width: 50%;
+}
+header .imagearea img{
+  width: 95%;
+}
+@keyframes fadeinUp{
+  0%{height: 0; opacity: 0; visibility: visible;}
+  50%{height: 50vh; opacity: 0.5; visibility: visible;}
+  100%{height: 100vh; opacity: 1; visibility:visible;}
+}
+@keyframes fadeinSide{
+  0%{transform: translateX(500px); opacity: 0.1; visibility: visible;}
+  20%{transform: translateX(350px); opacity: 0.2; visibility: visible;}
+  40%{transform: translateX(225px); opacity: 0.4; visibility: visible;}
+  60%{transform: translateX(125px); opacity: 0.6; visibility: visible;}
+  80%{transform: translateX(-10px); opacity: 1; visibility:visible;}
+  100%{transform: translateX(0px); opacity: 1; visibility:visible;}
+}
+/*Media queries*/
+@media screen and (max-width: 770px){
+  /*Media query for Home Page*/
+ .author{
+  width: 33.3vw;
+ }
+ #Me{
+  visibility: hidden;
+ }
+
+ header{
+  width: 100%;
+  flex-direction: column;
+ }
+ header .textarea{
+  margin-bottom: 50px;
+ }
+  header .textarea h1{
+    font-size: 40px;
+  }
+  header .textarea p{
+    font-size: 15px;
+  }
+  /*End Media Queries for Home Page*/
+
+
+
+}
+
+
+
+@media screen and (max-width: 400px){
+
+   /*Media query for Home Page*/
+  .author{
+    position: absolute;
+    top: 650px;
+    width: 100%;
+    height: 60vh;
+    border: none;
+   
+  }
+  #Me{
+    visibility: visible;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    text-decoration: underline;
+  }
+header{
+  left: 0;
+}
+header .imagearea{
+  position: absolute;
+  top: 50px;
+  width: 95%;
+  height: fit-content;
+}
+header .textarea{
+  position: relative;
+ top: 100px;
+ width: 100%;
+}
+header .textarea h1{
+  font-size: 30px;
+}
+header .textarea p{
+  font-size: 12px;
+  margin-bottom: 0;
+}
+button{
+  padding: 0;
+  font-size: 9px;
+}
+
+
+
+ /*End Media Queries for Home Page*/
+
+
+
+}
+
+/*End of home Page design*/
+
+/*Start of Table of Contents design*/
+.behind{
+  position: fixed;
+  width: 100vw;
+  height: 10vh;
+  background-color: rgb(245, 245, 245);
+  z-index: 1;
+
+}
+.topBar{
+  position: fixed;
+  top: 4vh;
+  left: 22.5vw;
+  width: 75vw;
+  height: 10vh;
+  display: flex;
+  justify-content:space-between;
+ border-radius: 10px;
+ background: #6176E3;
+ color: #FFFFFF;
+ box-shadow: 0.5px 1px 5px 1px rgba(40,40,40,0.4);
+ z-index: 1;
+}
+.topBar h3{
+width: 13.5vw;
+padding: 25px;
+margin-right: 20px;
+color: #FFFFFF;
+}
+.topBar > h3 > a{
+  position:absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.topBar > h3 > a > svg{
+  position: relative;
+  top: -2px;
+  padding: 5px;
+}
+
+nav{
+  width: 20vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background: #6176E3;
+  /*background: -moz-linear-gradient(top,#DA38CD 0%, #6176E3 100%);
+  background: -webkit-linear-gradient(top,#DA38CD 0%, #6176E3 100%);*/
+  color: #FFFFFF;
+  box-shadow: 0.5px 1px 5px 1px rgba(40,40,40,0.1);
+  z-index: 1;
+}
+nav h2{
+  padding:26.5px;
+  margin-left: 3.9vw;
+  color: #FFFFFF;
+ font-weight: bolder;
+}
+nav .logo{
+  position: absolute;
+  left: 1.5vw;
+  top: 3.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: #FFFFFF;
+}
+nav ul{
+  width: 100%;
+}
+nav > ul > li{
+  width: 100%;
+  padding: 0 20px;
+position: relative;
+list-style: none;
+}
+nav > ul > li > a{
+  display: block;
+  height: 10vh;
+width: 100%;
+padding: 20px 0;
+text-decoration: none;
+color: #FFFFFF;
+}
+nav > ul > li > svg{
+position: absolute;
+top: 22px;
+left: 16vw;
+font-size: 20px;
+transform: rotate(-90deg);
+transition: all 0.4s ease;
+}
+nav > ul > li:nth-of-type(1):hover:before,
+nav > ul > li:nth-of-type(2):hover:before,
+nav > ul > li:nth-of-type(3):hover:before,
+nav > ul > li:nth-of-type(4):hover:before,
+nav > ul > li:nth-of-type(5):hover:before,
+nav > ul > li:nth-of-type(6):hover:before,
+nav > ul > li:nth-of-type(7):hover:before,
+nav > ul > li:nth-of-type(8):hover:before{
+  content: '';
+  background:#ABE3FF;
+  position: absolute;
+  left: 0;
+  top: 1vh;
+  height: 65px;
+  display: inline-block;
+  width: 100%;
+  opacity:0.6;
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+/*  
+  WALA LANG PLEASE DISREGARD THESE FF CSS RULES KAY NI SUWAY RA KO BUTANG DROPDOWN, THEN NA REALIZE NGA MAOT HEHEHE
+.dropdown ul li{
+width: 100%;
+display: none;
+position: relative;
+opacity: 0;
+z-index: 999;
+transition: all 0.4s ease;
+}
+.dropdown  ul li a{
+  height: 10vh;
+width: 100%;
+padding:  20px 20px;
+text-decoration: none;
+color: #FFFFFF;
+}
+.dropdown > ul{
+  border-radius: 8px;
+}
+
+nav ul li:hover .fa-caret-down{
+  transform: rotate(1deg);
+}
+
+nav ul li:hover .dropdown ul{
+transform: translate(3px);
+position: absolute;
+top: 6vh;
+left: 19vw;
+display: flex;
+width: 20vw;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+opacity: 1;
+z-index: 999;
+background: #73adff;
+color: #FFFFFF;
+}
+nav ul li:nth-child(1n + 5):hover .dropdown ul{
+transform: translate(3px);
+position: absolute;
+top: -250px;
+left: 19vw;
+display: flex;
+width: 20vw;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+opacity: 1;
+z-index: 999;
+background: #73adff;
+color: #FFFFFF;
+}
+
+nav ul li:hover .dropdown ul li{
+transform: translate(3px);
+position: relative;
+top: 0;
+display: flex;
+opacity: 1;
+z-index: 999;
+color: #FFFFFF;
+}
+.dropdown ul li:hover{
+background: #ABB9FF;
+display: block;
+}
+*/
+
+section{
+  width: 70vw;
+  position: relative;
+  top: 18vh;
+  left: 25vw;
+  z-index: 0;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0.5px 1px 5px 1px rgba(40,40,40,0.2);
+  color: rgb(95, 108, 121);
+  padding: 30px;
+  margin-bottom: 5vh;
+  visibility: hidden;
+  animation: fromUp 2.5s forwards linear 0.5s;
+}
+
+
+@keyframes fromUp{
+  0%{height: 0; opacity: 0; visibility: visible;}
+  25%{height: 25vh; opacity: 0.3; visibility: visible;}
+  50%{height: 50vh; opacity: 0.5; visibility: visible;}
+  75%{height: 75vh; opacity: 0.8; visibility: visible;}
+  100%{height: 100%; opacity: 1; visibility: visible;}
+}
+
+p{
+width: 100%;
+text-align:justify;
+text-indent: 30px;
+line-height: 25px;
+margin-bottom: 15px;
+}
+
+section ul li, section a{
+  list-style: none;
+  line-height: 25px;
+  text-decoration: none;
+  color: rgb(95, 108, 121);
+  margin-left: 20px;
+  text-align: justify;
+}
+
+section a, section h1, section h2, section h3, section h4, strong, em{
+  display: inline;
+color: #6176E3;
+}
+
+section .horizontal_layout{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+section .horizontal_layout ul,.horizontal_layout p{
+  width: 100%;
+}
+section .horizontal_txt{
+  width: 75%;
+}
+section .horizontal_layout > .horizontal_img{
+  display: flex;
+ justify-content: center;
+ align-items: center;
+  width: 30vw;
+}
+.horizontal_img img{
+  width: 50%;
+}
+
+section hr{
+  margin: 20px 0;
+}
+
+section img:first-of-type{
+  width: 100%;
+}
+
+
+
+
+.cardwrapper{
+  width: 95vw;
+  position: relative;
+  top: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5vh;
+}
+.card{
+ /* width: 337px;*/
+ width: 22vw;
+  position: relative;
+  top: 9vh;
+  left: 25vw;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
+  z-index: 0;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0.5px 1px 5px 1px rgba(40,40,40,0.5);
+  color: rgb(95, 108, 121);
+  padding: 30px 0;
+}
+.card p, .card strong{
+  padding: 30px 30px 0 30px;
+}
+
+.card img{
+  width: 100%;
+  height: 40vh;
+  margin: 30px 0 5px 0;
+  padding: 0 10px 0 10px;
+ /* border: 1px solid lightslategray;*/
+ border-radius: 15px;
+}
+.card hr{
+  margin: 20px 0;
+}
+
+footer{
+  width: 78.9vw;
+  height: 30vh;
+  position: relative;
+  display: flex;
+  top: 40vh;
+  left: 20vw;
+  align-items:center;
+  justify-content:center;
+  color: lightslategray;
+}
+footer p{
+  width: 79vw;
+  height: 18vh;
+  position: relative;
+  left: 0;
+  top: 12vh;
+  display: flex;
+  background: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+  color: lightslategray;
+  box-shadow: 0.5px 1px 5px 1px rgba(40,40,40,0.2);
+  padding: 20px;
+}
+
+
+
